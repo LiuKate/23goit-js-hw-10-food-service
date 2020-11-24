@@ -38,15 +38,15 @@ function onChangeTheme(evt) {
 }
 
 function checkLocalStorageTheme() {
+
+    // bodyRef.classList = localStorageTheme;
+
     if (localStorageTheme === `dark`) {
         themeSwitchEl.checked = true;
-        bodyRef.classList = localStorageTheme;
-        // onChangeTheme();
+          
     }
     else {
         themeSwitchEl.checked = false;
-        bodyRef.classList = localStorageTheme;
-        // onChangeTheme();
     }
 };
 
