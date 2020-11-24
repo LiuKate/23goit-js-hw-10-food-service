@@ -18,28 +18,24 @@ checkLocalStorageTheme()
 function addDarkTheme () {
     document.body.classList.remove(`light-theme`);
     document.body.classList.add(`dark-theme`);
+    localStorage.setItem(`Theme`,`dark`)
 };
 
 function addLightTheme() {
     document.body.classList.remove(`dark-theme`);
     document.body.classList.add(`light-theme`);
+    localStorage.setItem(`Theme`,`light`)
 };
 
 function onChangeTheme () {
-    if ( themeSwitchEl.checked ) {
+    if (themeSwitchEl.checked) {
         
-        addDarkTheme ();
-        localStorage.setItem(`Theme`,`dark`)
-    }
-    
-    else {
+        addDarkTheme();
+    } else {
         addLightTheme();
-        localStorage.setItem(`Theme`,`light`)
     }
 
 };
-
-const localStorageTheme = localStorage.getItem(`Theme`);
 
 function checkLocalStorageTheme() {
     if (localStorageTheme === `dark`) {
@@ -50,5 +46,4 @@ function checkLocalStorageTheme() {
          themeSwitchEl.checked = false;
         addLightTheme();
     }
-    
 };
